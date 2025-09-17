@@ -19857,6 +19857,24 @@ ul {
 }
 
 
+/*blogg*/
+.banner-section-blogg {
+  min-height: 700px;
+  /* alto mínimo */
+  max-height: 800px;
+  /* alto máximo */
+  overflow: hidden;
+  /* oculta lo que se salga */
+}
+
+.banner-section-blogg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 
 /*cont*/
 .banner-section-cont {
@@ -19899,6 +19917,11 @@ ul {
 
   }
    .banner-section-aca {
+    max-height: 700px;
+
+  }
+
+   .banner-section-blogg {
     max-height: 700px;
 
   }
@@ -19959,6 +19982,13 @@ ul {
 
   }
 
+
+    .banner-section-blogg {
+    max-height: 100px;
+
+
+  }
+
    .banner-section-cont {
     max-height: 100px;
 
@@ -19994,6 +20024,10 @@ ul {
 
   
    .banner-section-aca {
+    min-height: 700px;
+    /* Ajusta el alto mínimo del banner en móvil */
+  }
+     .banner-section-blogg {
     min-height: 700px;
     /* Ajusta el alto mínimo del banner en móvil */
   }
@@ -20095,6 +20129,17 @@ ul {
 
 }
 
+.banner-section-blogg video {
+  display: none;
+}
+
+.banner-section-blogg {
+  background-image: url("../images/portfolio/imagen21.jpeg");
+  background-size: cover;
+  background-position: center;
+
+}
+
 .banner-section-cont video {
   display: block;
 }
@@ -20143,6 +20188,16 @@ ul {
   }
 
   .banner-section-aca {
+    background-image: none;
+    /* quitamos la imagen si hay video */
+  }
+
+      /* puedes ajustar el ancho, ej. 768px para solo móviles */
+  .banner-section-blogg video {
+    display: block;
+  }
+
+  .banner-section-blogg {
     background-image: none;
     /* quitamos la imagen si hay video */
   }
