@@ -166,7 +166,7 @@
                 trabajando para consolidar una comunidad fuerte y apasionada por el ciclismo BMX en Costa Rica.
               </p>
 
-              <video id="myVideo"
+              <video id="myVideo "
                 style="width: 100%; max-width: 90%; height: auto; object-fit: cover; border-radius: 8px; display: block;  margin: 2rem auto 0 auto;">
                 <source src="../assets/images/backgrounds/video7.mp4" type="video/mp4">
               </video>
@@ -561,23 +561,21 @@
 
 
 
-  <script>
-    const video = document.getElementById("myVideo");
+<script>
+const video = document.getElementById("myVideo");
 
-    video.addEventListener('click', () => {
+// Inicialmente no reproducir
+video.pause();
 
-      if (video.paused) {
-        video.play();
-      } else {
+// Al hacer clic, reproducir con sonido
+video.addEventListener("click", () => {
+    if (video.paused) {
+        video.play().catch(err => console.log("Error al reproducir:", err));
+    } else {
         video.pause();
-      }
-
-
-
-    });
-
-
-  </script>
+    }
+});
+</script>
 
 
 <script>
