@@ -101,7 +101,7 @@
     <section class="banner-section-blogg position-relative d-flex align-items-end ">
          <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.5); z-index: 0;">
       </div>
-      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline>
+      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline id="video-fondo2">
         <source src="../assets/images/backgrounds/video19.mp4" type="video/mp4" />
       </video>
       <div class="container">
@@ -577,6 +577,18 @@
     });
 
 
+  </script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("video-fondo2");
+      if (video) {
+        video.play().catch(err => {
+          console.log("Autoplay bloqueado:", err);
+        });
+      }
+    });
   </script>
 
 

@@ -104,7 +104,7 @@
       <!-- Overlay oscuro -->
       <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0,0,0,0.5); z-index: 0;">
       </div>
-      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline>
+      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline id="video-fondo3">
         <source src="../assets/images/backgrounds/video7.mp4" type="video/mp4" />
       </video>
       <div class="container">
@@ -279,6 +279,17 @@
   <script src="../assets/js/custom.js"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("video-fondo4");
+      if (video) {
+        video.play().catch(err => {
+          console.log("Autoplay bloqueado:", err);
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

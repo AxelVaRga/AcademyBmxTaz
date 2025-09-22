@@ -106,7 +106,7 @@
 
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end ">
-      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline>
+      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline id="video-fondo">
         <source src="../assets/images/backgrounds/video1.mp4" type="video/mp4" />
       </video>
       <div class="container">
@@ -1290,7 +1290,7 @@
           <div class="d-flex flex-column gap-8 pe-xl-5">
             <h2 class="mb-0 text-white">Únase a nuestra comunidad</h2>
             <div class="d-flex flex-column gap-2">
-             
+
 
               <a href="https://maps.app.goo.gl/3EorB3HbX1FUamCAA" target="_blank"
                 class="link-hover hstack gap-3 text-white fs-5">
@@ -1314,9 +1314,11 @@
         </div>
         <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
-            <li><a class="link-hover fs-5 text-white" href="https://www.tiktok.com/@tazchavarria_21?_t=ZM-8zvWULbD90W&_r=1">TikTok</a></li>
-            <li><a class="link-hover fs-5 text-white" href="https://www.instagram.com/tazchavarria_21?igsh=YzljYTk1ODg3Zg==">Instagram</a></li>
-       
+            <li><a class="link-hover fs-5 text-white"
+                href="https://www.tiktok.com/@tazchavarria_21?_t=ZM-8zvWULbD90W&_r=1">TikTok</a></li>
+            <li><a class="link-hover fs-5 text-white"
+                href="https://www.instagram.com/tazchavarria_21?igsh=YzljYTk1ODg3Zg==">Instagram</a></li>
+
           </ul>
         </div>
         <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
@@ -1324,8 +1326,8 @@
         </div>
       </div>
     </div>
-    <p class="m-3 text-white text-opacity-70 text-md-center mt-10">Elaborado por <a class="text-white"
-        href="" target="_blank">Axel Vargas Ramirez</a></p>
+    <p class="m-3 text-white text-opacity-70 text-md-center mt-10">Elaborado por <a class="text-white" href=""
+        target="_blank">Axel Vargas Ramirez</a></p>
   </footer>
 
   <div class="get-template hstack gap-2">
@@ -1343,6 +1345,17 @@
   <script src="../assets/js/custom.js"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("video-fondo");
+      if (video) {
+        video.play().catch(err => {
+          console.log("Autoplay bloqueado:", err);
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
