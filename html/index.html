@@ -106,8 +106,9 @@
 
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end ">
-      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline id="video-fondo">
+      <video class="position-absolute top-0 start-0 object-fit-cover" autoplay muted loop playsinline id="video-fondo" loading="lazy">
         <source src="../assets/images/backgrounds/video1.mp4" type="video/mp4" />
+        <source src="../assets/images/backgrounds/video1.mp4" type="video/webm" />
       </video>
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
@@ -1349,27 +1350,13 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("video-fondo");
-    // Remueve cualquier control
-    video.removeAttribute("controls");
-    video.setAttribute("autoplay", true);
+    video.muted = true;
+    video.play().catch(err => console.log("Autoplay bloqueado:", err));
 
-    // Forzar reproducción
-    function startVideo() {
-      video.play().catch(err => {
-        console.log("Autoplay bloqueado:", err);
-      });
-    }
-
-    // Intenta al cargar
-    startVideo();
-
-    // También reintenta cuando la página se vuelve a mostrar (ej. recarga o cambio de pestaña)
     document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) {
-        startVideo();
-      }
+      if (!document.hidden) video.play().catch(err => console.log("Autoplay bloqueado al regresar:", err));
     });
   });
 </script>
