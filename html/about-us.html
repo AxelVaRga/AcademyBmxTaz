@@ -561,30 +561,24 @@
 
 
 
-<script>
-const video = document.getElementById("myVideo");
+  <script>
+    const video = document.getElementById("myVideo");
 
-// Forzar reproducción al cargar (autoplay silenciado)
-video.play().catch(err => console.log("Autoplay bloqueado:", err));
+    video.addEventListener('click', () => {
 
-// Al hacer clic, abrir en grande y con sonido
-video.addEventListener("click", () => {
-    // Activar sonido
-    video.muted = false;
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
 
-    // Pantalla completa
-    if (video.requestFullscreen) {
-        video.requestFullscreen();
-    } else if (video.webkitRequestFullscreen) { /* Safari */
-        video.webkitRequestFullscreen();
-    } else if (video.msRequestFullscreen) { /* IE11 */
-        video.msRequestFullscreen();
-    }
 
-    // Reproducir video (con sonido)
-    video.play();
-});
-</script>
+
+    });
+
+
+  </script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
