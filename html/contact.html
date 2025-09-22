@@ -232,16 +232,33 @@
     </button>
   </div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("video-fondo6");
-      if (video) {
-        video.play().catch(err => {
-          console.log("Autoplay bloqueado:", err);
-        });
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("video-fondo6");
+    // Remueve cualquier control
+    video.removeAttribute("controls");
+    video.setAttribute("autoplay", true);
+
+    // Forzar reproducción
+    function startVideo() {
+      video.play().catch(err => {
+        console.log("Autoplay bloqueado:", err);
+      });
+    }
+
+    // Intenta al cargar
+    startVideo();
+
+    // También reintenta cuando la página se vuelve a mostrar (ej. recarga o cambio de pestaña)
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        startVideo();
       }
     });
-  </script>
+  });
+</script>
 
 
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
